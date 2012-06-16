@@ -1,0 +1,34 @@
+<?php
+namespace Cupon\CiudadBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ */
+class Ciudad
+{
+	/**
+	* @ORM\Id
+	* @ORM\Column(type="integer")
+	* @ORM\GeneratedValue
+	*/
+	protected $id;
+	
+	/** @ORM\Column(type="string", length=100) */
+	protected $nombre;
+	
+	/** @ORM\Column(type="string", length=100) */
+	protected $slug;
+	
+	/** toString **/
+	
+	public function __toString()
+	{
+		return $this->getNombre();
+	}
+	
+	/** Getters and setters **/
+	
+
+}
