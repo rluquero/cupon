@@ -14,7 +14,7 @@ class DefaultController extends Controller {
     public function portadaAction() {
 	$em = $this->getDoctrine()->getEntityManager();
 	$oferta = $em->getRepository('OfertaBundle:Oferta')->findOneBy(array(
-	    'ciudad' => 26
+	    'ciudad' => $this->container->getParameter('cupon.ciudad_por_defecto')
 		));
 
 	return $this->render(

@@ -17,3 +17,16 @@ monolog:
             type:  stream
             path:  %kernel.logs_dir%/%kernel.environment%.log
             level: debug
+				mail:
+						type: fingers_crossed
+						action_level: error
+						handler: buffered
+				buffered:
+						type: buffer
+						handler: swift
+				swift:
+						type: swift_mailer
+						from_email: robot@cupon.com
+						to_email: claudator@gmail.com
+						subject: Se ha producido un error
+						level: debug

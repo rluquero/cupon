@@ -21,6 +21,14 @@ portada:
 pagina_ayuda:
     pattern: /ayuda
     defaults: { _controller: OfertaBundle:Default:ayuda }
+    
+pagina_estatica:
+  pattern: /sitio/{pagina}
+  defaults: { _controller: OfertaBundle:Sitio:estatica }
+  
+_pagina_estatica:
+  pattern: /sitio/{pagina}/
+  defaults: { _controller: FrameworkBundle:Redirect:redirect, route: pagina_estatica }
 
 # Internal routing configuration to handle ESI
 #_internal:
